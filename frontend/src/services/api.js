@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:8000";
+const BASE_URL = "https://financial-health-assessment-7ayd.onrender.com";
 
 export async function analyze() {
   const response = await fetch(`${BASE_URL}/finance/analyze`, {
