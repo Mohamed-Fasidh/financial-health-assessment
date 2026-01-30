@@ -1,0 +1,124 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", "Segoe UI", Roboto, Arial, sans-serif;
+  background: #f4f6f9;
+  color: #1f2937;
+}
+
+/* Page container */
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Card */
+.card {
+  background: #ffffff;
+  width: 100%;
+  max-width: 520px;
+  padding: 32px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* Title */
+.card h1 {
+  margin: 0 0 16px;
+  font-size: 28px;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* Button */
+.btn {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  margin-top: 16px;
+  background: #2563eb;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.btn:hover {
+  background: #1d4ed8;
+}
+
+.btn:disabled {
+  background: #93c5fd;
+  cursor: not-allowed;
+}
+
+/* Result box */
+.result {
+  margin-top: 24px;
+  padding: 16px;
+  border-radius: 8px;
+  background: #f1f5f9;
+  text-align: center;
+}
+
+/* Score badge */
+.score {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.score.low {
+  color: #dc2626;
+}
+
+.score.medium {
+  color: #d97706;
+}
+
+.score.high {
+  color: #16a34a;
+}
+
+/* Insight text */
+.insight {
+  font-size: 15px;
+  color: #374151;
+}
+.file-upload {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.file-btn {
+  padding: 8px 16px;
+  background-color: #2563eb;
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.2s ease;
+}
+
+.file-btn:hover {
+  background-color: #1e40af;
+}
+
+.file-name {
+  font-size: 14px;
+  color: #555;
+  max-width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
