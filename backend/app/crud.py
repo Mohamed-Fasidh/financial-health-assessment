@@ -26,6 +26,5 @@ def create_financial_record(db: Session, data: dict, score: int, working_capital
     db.flush()  
     db.commit()
     print(" AFTER COMMIT")
-    db.refresh(record)
     return record
 
