@@ -3,6 +3,7 @@ import pandas as pd
 import pdfplumber
 from sqlalchemy.orm import Session
 import logging
+from sqlalchemy import text
 
 from app.services.analytics import calculate_health_score
 from app.services.recommendations import bank_recommendation
@@ -84,7 +85,7 @@ async def upload_file(
         logging.info(f"Recommendation: {recommendation}")
 
         # 🔍 Verify DB connection
-        db_name = db.execute("SELECT current_database()").fetchone()
+        db_name = db.execute(text("SELECT current_database()")).fetchone()
         logging.info(f"CONNECTED DATABASE: {db_name}")
 
         # ✅ INSERT
