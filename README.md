@@ -6,13 +6,15 @@ A full-stack financial health assessment platform designed for **Small and Mediu
 
 ##  Live Demo
 
-> *(Add after deployment)*
-
 ```
-https://your-live-url.com
+https://financial-health-assessment-mohamed-fasidhs-projects.vercel.app/
 ```
 
 ---
+Note: The backend is deployed on Render free tier. 
+Due to cold start behavior, the first API request after inactivity may take up to 60 seconds. 
+Subsequent requests respond instantly.
+
 
 ##  Problem Statement
 
