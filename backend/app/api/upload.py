@@ -1,3 +1,4 @@
+from io import BytesIO
 import logging
 from fastapi import APIRouter, UploadFile, File, HTTPException, Depends
 import pandas as pd
@@ -37,7 +38,9 @@ async def upload_file(
 
         # ================= XLSX =================
         elif filename.endswith(".xlsx"):
-            df = pd.read_excel(file.file)
+            contents = await file.read()           # read bytes
+            excel_file = BytesIO(contents)  
+            df = pd.read_excel(excel_file)
             data = {
                 "revenue": float(df["revenue"].sum()),
                 "expenses": float(df["expenses"].sum()),
