@@ -41,14 +41,17 @@ async def upload_file(
             contents = await file.read()
             excel_file = BytesIO(contents)
             df = pd.read_excel(excel_file)
-
+            logging.info(f"RAW COLUMNS: {df.columns.tolist()}")
+            logging.info("RAW DATA PREVIEW:")
+            logging.info(df.head().to_dict())
     # 🔧 Normalize column names
             df.columns = (
                df.columns
                 .str.strip()
                 .str.lower()
                 .str.replace(" ", "_")
-       )
+            ) 
+            logging.info(f"NORMALIZED COLUMNS: {df.columns.tolist()}")
 
     # 🔧 Force numeric conversion
             numeric_cols = [
@@ -73,7 +76,8 @@ async def upload_file(
                 "inventory": float(df.get("inventory", 0).sum()),
                 "loan": float(df.get("loan_amount", 0).sum()),
                 "tax": float(df.get("tax_paid", 0).sum()),
-         }
+            }
+            logging.info(f"FINAL PARSED DATA: {data}")
 
 
         # ================= PDF =================
