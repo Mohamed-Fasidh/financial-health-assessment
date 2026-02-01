@@ -38,18 +38,43 @@ async def upload_file(
 
         # ================= XLSX =================
         elif filename.endswith(".xlsx"):
-            contents = await file.read()           # read bytes
-            excel_file = BytesIO(contents)  
+            contents = await file.read()
+            excel_file = BytesIO(contents)
             df = pd.read_excel(excel_file)
+
+    # 🔧 Normalize column names
+            df.columns = (
+               df.columns
+                .str.strip()
+                .str.lower()
+                .str.replace(" ", "_")
+       )
+
+    # 🔧 Force numeric conversion
+            numeric_cols = [
+                "revenue",
+                "expenses",
+                "receivables",
+                "payables",
+                "inventory",
+                "loan_amount",
+                "tax_paid",
+         ]
+
+            for col in numeric_cols:
+                if col in df.columns:
+                    df[col] = pd.to_numeric(df[col], errors="coerce").fillna(0)
+
             data = {
-                "revenue": float(df["revenue"].sum()),
-                "expenses": float(df["expenses"].sum()),
-                "receivables": float(df["receivables"].sum()),
-                "payables": float(df["payables"].sum()),
-                "inventory": float(df["inventory"].sum()),
-                "loan": float(df["loan_amount"].sum()),
-                "tax": float(df["tax_paid"].sum()),
-            }
+                "revenue": float(df.get("revenue", 0).sum()),
+                "expenses": float(df.get("expenses", 0).sum()),
+                "receivables": float(df.get("receivables", 0).sum()),
+                "payables": float(df.get("payables", 0).sum()),
+                "inventory": float(df.get("inventory", 0).sum()),
+                "loan": float(df.get("loan_amount", 0).sum()),
+                "tax": float(df.get("tax_paid", 0).sum()),
+         }
+
 
         # ================= PDF =================
         elif filename.endswith(".pdf"):
