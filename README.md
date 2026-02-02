@@ -22,6 +22,10 @@ SMEs often struggle to understand their financial health due to lack of financia
 
 ---
 
+## Project Description
+
+The platform evaluates SME financial health by analyzing uploaded financial documents (CSV/XLSX/PDF), computing working capital, credit risk score, and loan eligibility. Results are securely stored in PostgreSQL and presented via a simple React dashboard.
+
 ##  Features
 
 * Upload and analyze **CSV / XLSX / PDF (text-based)** financial documents
@@ -45,8 +49,6 @@ SMEs often struggle to understand their financial health due to lack of financia
 | Risk detection              |  Implemented                   |
 | Working capital analysis    |  Implemented                   |
 | Loan recommendations        |  Implemented                   |
-| GST API integration         |  Implemented (mock)            |
-| Banking API (mock)          |  Implemented                   |
 | Industry-ready architecture |  Implemented                   |
 | HTTPS encryption            |  Implemented                   |
 | Encrypted DB volume         |  Implemented                   |
@@ -93,11 +95,6 @@ PostgreSQL (Encrypted Volume)
 * HTTPS (TLS certificates)
 * Encrypted database volumes
 
-### Integrations
-
-* GST API (mock)
-* Banking API (mock)
-* Ready for real API replacement
 
 ---
 
