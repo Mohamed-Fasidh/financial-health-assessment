@@ -142,15 +142,6 @@ Returns: Revenue, Expenses, Score, Insights
 
 ```
 POST /finance/analyze
-```
-
----
-
-### GST Compliance Check
-
-```
-GET /gst/{gstin}
-```
 
 ---
 
