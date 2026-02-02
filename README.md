@@ -217,10 +217,8 @@ npm start
 
 ##  Demo Video
 
-> *(Add after recording)*
-
 ```
-https://youtu.be/your-demo-video
+https://drive.google.com/file/d/1JW7kGiifXtelUOQ6NnaHrN7nIGmR2j5C/view?usp=sharing
 ```
 
 ---
