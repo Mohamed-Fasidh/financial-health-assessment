@@ -31,8 +31,3 @@ app.include_router(debug.router)
 @app.on_event("startup")
 def startup():
     Base.metadata.create_all(bind=engine)
-
-@router.get("/health")
-def health(db: Session = Depends(get_db)):
-    db.execute("SELECT 1")
-    return {"status": "ok"}
